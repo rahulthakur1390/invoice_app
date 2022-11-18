@@ -1,0 +1,33 @@
+<div>
+  <div class="buttons-column">
+    <div>
+      <dx-button
+        stylingMode="contained"
+        text="ADD-DETAILS"
+        type="default"
+        [width]="'100%'"
+        [routerLink]="['/add-edit-details']"
+      >
+      </dx-button>
+    </div>
+    <div>
+</div>
+
+<div class="list-container">
+  <dx-list
+    height="600"
+    [dataSource]="invoices"
+    [grouped]="false"
+    [collapsibleGroups]="false"
+    [showSelectionControls]="true"
+    pageLoadMode="scrollBottom"
+    itemTemplate="data"
+  >
+    <div *dxTemplate="let item of 'data'" (click)="handleOnClick(item)">
+      <div>Invoice Main Contact: {{ item.mainContact }}</div>
+      <div>Order No: {{ item.id }}</div>
+      <div>E Name: {{ item.eName }}</div>
+      <div>A Name: {{ item.aName }}</div>
+    </div>
+  </dx-list>
+</div>

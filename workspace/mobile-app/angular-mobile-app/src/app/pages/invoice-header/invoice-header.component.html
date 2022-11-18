@@ -1,0 +1,19 @@
+<div class="list-container">
+  <dx-list
+    height="600"
+    [dataSource]="invoices"
+    [grouped]="false"
+    [collapsibleGroups]="false"
+    [showSelectionControls]="true"
+    pageLoadMode="scrollBottom"
+    itemTemplate="data"
+  >
+  <!-- (click)="handleOnClick(item)" -->
+    <div *dxTemplate="let item of 'data'">
+      <div>Invoice Main Contact: {{ item.mainContact }}</div>
+      <div>E Name: {{ item.eName }}</div>
+      <div>A Name: {{ item.aName }}</div>
+      <div>Total: {{ item.totalAmount }}</div>
+    </div>
+  </dx-list>
+</div>

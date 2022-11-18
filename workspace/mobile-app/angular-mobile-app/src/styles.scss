@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+.main {
+  width: 100%;
+}
+
+.container {
+  width: auto;
+  margin: 20px;
+}
+
+.demo-container .dx-fieldset:first-child {
+  width: 500px;
+}
+
+.custom-color-picker {
+  width: 82px;
+  padding: 5px;
+}
+
+.dx-button-content img.dx-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.color {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.header {
+  background-color: #375baf;
+  padding: 0px 10px;
+  width: 100%;
+}
+
+.header h3{
+  color:#fff;
+}
+
+.dx-scrollview-content{
+  //margin-right:15px;
+}
+
+.main .dx-button {
+  margin-right: 5px;
+}
+.full-width {
+  width: 100%;
+}
+
+.pull-right {
+  float: right;
+}

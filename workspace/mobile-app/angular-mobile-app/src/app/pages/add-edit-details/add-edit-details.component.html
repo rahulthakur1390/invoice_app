@@ -1,0 +1,77 @@
+<dx-button
+    text="CANCEL"
+    type="danger"
+    (onClick)="resetForm()">
+</dx-button>
+
+<form (submit)="handleSubmit($event)">
+  <dx-form [formData]="invoice" [colCount]="1">
+    <!-- [editorOptions]="{ disabled: true }" -->
+
+    <dxi-item dataField="mainContact" type="numeric">
+      <dxi-validation-rule type="required" message="Main Contact is required"></dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item dataField="eName" type="string">
+      <dxi-validation-rule type="required" message="EName is required"></dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item dataField="aName" type="string">
+      <dxi-validation-rule type="required" message="AName is required"></dxi-validation-rule>
+    </dxi-item>
+
+
+    <dxi-item dataField="productType" editorType="dxSelectBox"
+      [editorOptions]="{ items: productTypes, searchEnabled: true, value: '' }">
+      <dxi-validation-rule type="required" message="product Type is required"></dxi-validation-rule>
+    </dxi-item>
+
+
+    <dxi-item dataField="quantity" type="numeric">
+      <dxi-validation-rule type="required" message="product Type is required"></dxi-validation-rule>
+      <dxi-validation-rule type="numeric">
+      </dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item dataField="price" type="numeric">
+      <dxi-validation-rule type="required" message="price is required"></dxi-validation-rule>
+      <dxi-validation-rule type="numeric">
+      </dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item dataField="discountPercentage" type="numeric">
+      <dxi-validation-rule type="required" message="discount is required"></dxi-validation-rule>
+      <dxi-validation-rule type="numeric">
+      </dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item dataField="totalDiscount" type="numeric"
+      [editorOptions]="{disabled: true, value: getTotalDiscount().toFixed(2)}">
+      <dxi-validation-rule type="required" message="tax percentage is required"></dxi-validation-rule>
+      <dxi-validation-rule type="numeric">
+      </dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item dataField="taxPercentage" type="numeric">
+      <dxi-validation-rule type="required" message="tax percentage is required"></dxi-validation-rule>
+      <dxi-validation-rule type="numeric">
+      </dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item dataField="totalTax" type="numeric" [editorOptions]="{disabled: true, value: getTotalTax().toFixed(2)}">
+      <dxi-validation-rule type="required" message="tax percentage is required"></dxi-validation-rule>
+      <dxi-validation-rule type="numeric">
+      </dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item dataField="totalAmount" type="numeric" [editorOptions]="{disabled: true, value: getNetCalculation()}">
+      <dxi-validation-rule type="required" message="tax percentage is required"></dxi-validation-rule>
+      <dxi-validation-rule type="numeric">
+      </dxi-validation-rule>
+    </dxi-item>
+
+    <dxi-item itemType="button" [buttonOptions]="buttonOptions">
+    </dxi-item>
+
+  </dx-form>
+</form>

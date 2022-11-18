@@ -1,0 +1,6 @@
+{
+	"appId": "com.example.app",
+	"appName": "angular-mobile-app",
+	"webDir": "dist/angular-mobile-app",
+	"bundledWebRuntime": false
+}
